@@ -47,3 +47,31 @@ body {
 .volver:hover {
   background: #e74c3c;
 }
+.galeria {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.galeria h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.imagenes-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.imagenes-galeria img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagenes-galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
