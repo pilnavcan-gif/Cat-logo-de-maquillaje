@@ -1,0 +1,49 @@
+/* detalle.css — estilos específicos de las páginas de producto */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  padding: 20px;
+}
+
+.detalle-producto {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.detalle-producto img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.descripcion {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 15px;
+  background: #f9f9f9;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  background: #c0392b;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.volver:hover {
+  background: #e74c3c;
+}
