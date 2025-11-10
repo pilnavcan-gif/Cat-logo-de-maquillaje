@@ -3,13 +3,20 @@
 <head>
   <meta charset="utf-8">
   <title>Sombra de ojos Nude - Detalle</title>
-  <link rel="stylesheet" href="styles\styles.css">
-  <link rel="stylesheet" href="styles\detalle.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/detalle.css">
+  <link rel="stylesheet" href="styles/pestañas.css"> <!-- Estilos header y pestañas -->
 </head>
 <body>
+
+<!-- Contenedor donde se cargará el header -->
+<div id="header-container"></div>
+
+<!-- Contenido del producto -->
+<main class="contenido-producto">
   <div class="detalle-producto">
     <h1>Sombra de ojos Nude</h1>
-    <img src="imagenes\sombras.jpg" alt="Sombra de ojos Nude">
+    <img src="imagenes/sombras.jpg" alt="Sombra de ojos Nude">
     <div class="descripcion">
       Esta sombra de ojos nude combina una textura suave y sedosa con una pigmentación intensa.
       Ideal para looks naturales o para usar como base de maquillaje de ojos.
@@ -19,16 +26,71 @@
     <p><strong>Precio:</strong> 7,99 €</p>
     <a href="productos.html" class="volver">← Volver al catálogo</a>
   </div>
-   <div class="galeria">
+
+  <div class="galeria">
     <h2>Galería de imágenes</h2>
     <div class="imagenes-galeria">
-      <img src="imagenes\imgsombras\sombra1.jpg" alt="Detalle sombra nude 1">
-      <img src="imagenes\imgsombras\sombra2.jpg" alt="Detalle sombra nude 2">
-      <img src="imagenes\imgsombras\sombra3.jpg" alt="Detalle sombra nude 3">
-      <img src="imagenes\imgsombras\sombra4.jpg" alt="Detalle sombra nude 4">
+      <img src="imagenes/imgsombras/sombra1.jpg" alt="Detalle sombra nude 1">
+      <img src="imagenes/imgsombras/sombra2.jpg" alt="Detalle sombra nude 2">
+      <img src="imagenes/imgsombras/sombra3.jpg" alt="Detalle sombra nude 3">
+      <img src="imagenes/imgsombras/sombra4.jpg" alt="Detalle sombra nude 4">
     </div>
   </div>
-</body>
-</html>
+
+  <!-- Pestañas del producto -->
+  <div id="general" class="tab-content">
+    <h2>Datos Generales</h2>
+    <p>SKU: 0000000750</p>
+    <p>EAN: 8437021215267</p>
+    <p>Marca: NUDENUDE</p>
+    <p>IVA: 21%</p>
+  </div>
+
+  <div id="logistica" class="tab-content">
+    <h2>Datos de Logística</h2>
+    <p>Logística NUDENUDE</p>
+  </div>
+
+  <div id="multimedia" class="tab-content">
+    <h2>Multimedia/Web</h2>
+    <p>Información multimedia y web del producto NUDENUDE</p>
+  </div>
+
+  <div id="calidad" class="tab-content">
+    <h2>Calidad</h2>
+    <p>Información de calidad del producto. Excelente.</p>
+  </div>
+</main>
+
+<!-- Script para cargar header y activar pestañas -->
+<script>
+  fetch('header.html') // Ajusta la ruta según tu carpeta
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+
+      // Activar pestañas
+      const buttons = document.querySelectorAll('.tab-btn');
+      const tabs = document.querySelectorAll('.tab-content');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Ocultar todas las pestañas
+          tabs.forEach(tab => tab.classList.remove('active'));
+          // Quitar active de todos los botones
+          buttons.forEach(b => b.classList.remove('active'));
+
+          // Mostrar pestaña correspondiente
+          const tabId = btn.getAttribute('data-tab');
+          const tab = document.getElementById(tabId);
+          if(tab) tab.classList.add('active');
+
+          // Activar el botón
+          btn.classList.add('active');
+        });
+      });
+    });
+</script>
+
 </body>
 </html>

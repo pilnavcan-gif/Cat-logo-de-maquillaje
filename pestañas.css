@@ -1,0 +1,43 @@
+/* Header fijo */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000; /* siempre encima */
+}
+
+/* Separar el contenido del main para que no quede debajo del header */
+main {
+  margin-top: 150px; /* ajustar según altura del header */
+  padding: 20px;
+}
+
+/* Pestañas */
+.tab-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background-color: #555;
+}
+
+/* Contenido de pestañas oculto por defecto */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+

@@ -5,8 +5,23 @@
   <title>Sombra de ojos Nude - Detalle</title>
   <link rel="stylesheet" href="styles\styles.css">
   <link rel="stylesheet" href="styles\detalle.css">
+ 
 </head>
 <body>
+  <div id="header-container"></div>
+
+  <script>
+    // Carga el header reutilizable
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        // Una vez cargado el header, cargamos el script que le da funcionalidad
+        const script = document.createElement('script');
+        script.src = 'styles/scripts/pestañas.js';
+        document.body.appendChild(script);
+      });
+  </script>
   <div class="detalle-producto">
     <h1>Sombra de ojos Nude</h1>
     <img src="imagenes\labial.jpg" alt="Labial Rojo Intenso">
@@ -25,5 +40,29 @@
       <img src="imagenes\imgsombras\labial3.jpg" alt="Detalle labial rojo 3">
       <img src="imagenes\imgsombras\labial4.jpg" alt="Detalle labial rojo 4">
     </div>
-  </body>
+  </div>
+
+  <div id="general" class="tab-content active">
+      <h2>Datos Generales</h2>
+      <p>SKU: 0000000750</p>
+      <p>EAN: 8437021215267</p>
+      <p>Marca: LABIAL</p>
+      <p>IVA: 21%</p>
+    </div>
+
+    <div id="logistica" class="tab-content">
+      <h2>Datos de Logística</h2>
+      <p>Informacion del LABIAL</p>
+    </div>
+
+    <div id="multimedia" class="tab-content">
+      <h2>Multimedia/Web</h2>
+      <p>Información multimedia del Labial</p>
+    </div>
+
+    <div id="calidad" class="tab-content">
+      <h2>Calidad</h2>
+      <p>Calidad del labial</p>
+    </div>
+</body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle de producto</title>
+  <link rel="stylesheet" href="pestañas.css">
+</head>
+<body>
+
+  
+
+
+  <h1>Maquillajes</h1>
+  <p><strong>Referencia:</strong> 0000000750</p>
+
+  <!-- 🔹 PESTAÑAS (botones de arriba) -->
+  <div class="tabs">
+    <button class="tab active" data-tab="general">General</button>
+    <button class="tab" data-tab="logistica">Logística</button>
+    <button class="tab" data-tab="multimedia">Multimedia/Web</button>
+    <button class="tab" data-tab="calidad">Calidad</button>
+  </div>
+
+  <!-- 🔹 CONTENIDO DE CADA PESTAÑA -->
+  <!-- General -->
+  <div class="tab-content active" id="general">
+    <h2>Datos Generales</h2>
+    <p><strong>SKU:</strong> 0000000750</p>
+    <p><strong>EAN:</strong> 8437021215267</p>
+    <p><strong>Marca:</strong> Wug</p>
+    <p><strong>IVA:</strong> 10%</p>
+  </div>
+
+  <!-- Logística -->
+  <div class="tab-content" id="logistica">
+    <h2>Identificación del Producto</h2>
+    <p><strong>Largo:</strong> 10 cm</p>
+    <p><strong>Ancho:</strong> 5 cm</p>
+    <p><strong>Peso:</strong> 0,2 kg</p>
+  </div>
+
+  <!-- Multimedia -->
+  <div class="tab-content" id="multimedia">
+    <h2>Imágenes del producto</h2>
+    <img src="imagenes/imgsombras/sombra1.jpg" alt="Foto del producto" width="200">
+    <p>Esta es la imagen principal del producto.</p>
+  </div>
+
+  <!-- Calidad -->
+  <div class="tab-content" id="calidad">
+    <h2>Datos de Calidad</h2>
+    <p><strong>Certificado sanitario:</strong> Aprobado</p>
+    <p><strong>Control de calidad:</strong> Superado</p>
+  </div>
+
+  <!-- 🔹 SCRIPT: hace que al pinchar una pestaña se muestre su contenido -->
+  <script>
+    // 1️⃣ Seleccionamos todas las pestañas y los contenidos
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    // 2️⃣ Recorremos cada pestaña
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+
+        // 3️⃣ Quitamos la clase 'active' de todas las pestañas y contenidos
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        // 4️⃣ Activamos la pestaña que se pulsó
+        tab.classList.add('active');
+
+        // 5️⃣ Buscamos el bloque de contenido que tiene el mismo id que el 'data-tab' del botón
+        const target = document.getElementById(tab.dataset.tab);
+
+        // 6️⃣ Mostramos ese bloque activándolo
+        target.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
